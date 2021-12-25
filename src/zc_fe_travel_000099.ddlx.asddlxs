@@ -1,6 +1,25 @@
 @Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Travel',
+        typeNamePlural: 'Travels'
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'LocalLastChangedAt',
+            direction: #DESC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
 annotate view ZC_FE_TRAVEL_000099 with
 {
+
+  @UI.lineItem: [{ position: 10 }]
+  TravelID;
+
   @UI.lineItem: [{ position: 20 }]
   @UI.selectionField: [{ position: 10 }]
   AgencyID;
@@ -21,8 +40,9 @@ annotate view ZC_FE_TRAVEL_000099 with
   @UI.lineItem: [{ position: 70 }]
   TotalPrice;
 
-  @UI.lineItem: [{ position: 80 }]
+  @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
   @UI.selectionField: [{ position: 30 }]
+  @UI.textArrangement: #TEXT_ONLY
   OverallStatus;
 
   @UI.lineItem: [{ position: 90 }]
