@@ -67,7 +67,7 @@ define root view entity ZC_FE_TRAVEL_000099
       _TravelStatus.TravelStatusText as TravelStatusText,
 
       OverallStatusCriticality,
-      
+
       CreatedBy,
       CreatedAt,
       LastChangedBy,
